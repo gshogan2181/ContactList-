@@ -1,17 +1,20 @@
+import App from '../App'
+import SelectedContact from './SelectedContact'
 
-const ContactRow = ({ contacts }) => {
 
-return (
-    <tr>
-        <td>{contacts.name}</td>
-        <td>{contacts.email}</td>
-        <td>{contacts.phone}</td>
- 
-    </tr>
- )
-}
-export default ContactRow; 
+export default function ContactRow({ contact, setSelectedContactId }) { 
     
+    return ( 
+
+       <tr onClick={() => {
+        setSelectedContactId(contact.id)
+        }}>
+            <td>{contact.name}</td>
+            <td>{contact.phone}</td>
+            <td>{contact.email}</td>
+        </tr> 
+    )
+}
 
 
 
